@@ -23,11 +23,24 @@ extension=php_redis.dll
 
 - 开始使用你的Redis
 
-``` shell
+``` php
 <?php
      $redis = new Redis();                   //redis对象
      $redis->connect("192.168.60.6","6379"); //连接redis服务器
      $redis->set("test","Hello World");      //set字符串值
      echo $redis->get("test");               //获取值
 ?>
+```
+
+## Window 下启动Redis报错解决
+
+- creating server tcp listening socket 127.0.0.1:6379: bind No error
+
+<p>解决方案如下按顺序输入如下命令就可以连接成功</p>
+
+``` shell
+1. redis-cli.exe
+2. shutdown
+3. exit
+4. redis-server.exe redis.windows.conf
 ```
